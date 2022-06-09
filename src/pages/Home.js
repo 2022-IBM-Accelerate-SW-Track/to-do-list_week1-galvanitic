@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-  
+import './Home.css';
+import AddTodo from '../component/AddTodo';
+import Todos from '../component/todos';
 class Home extends Component {
   // A default state of this component with an empty list of todos.
   constructor() {
     super();
     this.state = {
-      // create your empty list here call it todos.
+      todos: [],
     };
   }
   // the addTodo function simply creates a new array that includes the user submitted todo item and then
@@ -28,7 +30,8 @@ class Home extends Component {
     return (
       <div className="Home">
         <h1>Todo's </h1>
-        <p> Replace this</p>
+        <AddTodo addTodo={this.addTodo} />
+        <Todos todos={this.state.todos} />
       </div>
     );
   }
